@@ -31,21 +31,37 @@ sap.ui.define([
             },
 
             changeModelToOneWay: function(){
+                // obtendo model atual
                 var oModel = this.getView().getModel();
-                oModel.setDefaultBindingMode(sap.ui.model.BindingMode.OneWay);
-                oModel.updateBindings();
-                this.getView().setModel(oModel);
 
-                alert(oModel.getDefaultBindingMode());
+                // criando um novo model
+                var oModel2 = new JSONModel();
+
+                // copiando os dados
+                oModel2.setData(oModel.getData());
+
+                // definindo o modo
+                oModel2.setDefaultBindingMode(sap.ui.model.BindingMode.OneWay);
+
+                // colocando na view
+                this.getView().setModel(oModel2);
             },
 
             changeModelToTwoWay: function(){
+                // obtendo model atual
                 var oModel = this.getView().getModel();
-                oModel.setDefaultBindingMode(sap.ui.model.BindingMode.TwoWay);
-                oModel.updateBindings();
-                this.getView().setModel(oModel);
 
-                alert(oModel.getDefaultBindingMode());
+                // criando um novo model
+                var oModel2 = new JSONModel();
+
+                // copiando os dados
+                oModel2.setData(oModel.getData());
+
+                // definindo o modo
+                oModel2.setDefaultBindingMode(sap.ui.model.BindingMode.TwoWay);
+
+                // colocando na view
+                this.getView().setModel(oModel2);
             }
         });
     });
