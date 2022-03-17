@@ -1,0 +1,40 @@
+<mvc:View
+    controllerName="fioridatabinding1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <l:VerticalLayout width="100%" class="sapUiContentPadding">
+                        <Text text="Two Way"/>
+                        <Toolbar width="100%" height="1px"/>
+
+                        <Text text="First Name"/>
+                        <Input value="{/FirstName}"/>
+
+                        <Toolbar width="100%" height="1px"/>
+
+                        <Text text="Last Name"/>
+                        <Input value="{/LastName}"/>
+
+                        <Toolbar width="100%" height="1px"/>
+
+                        <Text text="Full Name"/>
+                        <Input value="{/FirstName} {/LastName}"/>                        
+                    </l:VerticalLayout>
+                    <l:HorizontalLayout width="100%" class="sapUiContentPadding">
+                        <Button text="Show Data From Model" press="showDataFromModel"/>
+                        <Button text="Change FirstName to Neo" press="changeFirstName"/>
+                        
+                        <Button text="Change Model to OneWay" press="changeModelToOneWay"/>
+                        <Button text="Change Model to TwoWay" press="changeModelToTwoWay"/>
+                    </l:HorizontalLayout>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
